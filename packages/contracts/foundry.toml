@@ -1,2 +1,10 @@
 [profile.ci.fuzz]
 runs = 10_000
+[fmt] # See https://book.getfoundry.sh/reference/config/formatter
+int_types = "short"
+line_length = 120
+bracket_spacing = true
+multiline_func_header = "all"
+number_underscore = "thousands"
+quote_style = "single"
+ignore = ['./script/**/*']
