@@ -27,5 +27,4 @@ jobs:
           version: nightly
       - uses: nrwl/nx-set-shas@v3
       - run: bun install --frozen-lockfile
-      - run: git branch --track main origin/main
       - run: bun nx affected -t build test --parallel=2
