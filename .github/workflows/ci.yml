@@ -27,4 +27,5 @@ jobs:
           version: nightly
       - uses: nrwl/nx-set-shas@v3
       - run: bun install --frozen-lockfile
-      - run: bun nx affected -t build test --parallel=2
+      - run: bun nx affected -t build --parallel=2
+      - run: bun nx affected -t test --parallel=2
