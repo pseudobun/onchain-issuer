@@ -5,7 +5,7 @@
   },
   "editor.formatOnSave": true,
   "[solidity]": {
-    "editor.defaultFormatter": "JuanBlanco.solidity"
+    "editor.defaultFormatter": "NomicFoundation.hardhat-solidity"
   },
   "[jsonc]": {
     "editor.defaultFormatter": "biomejs.biome"
@@ -18,6 +18,5 @@
   },
   "[typescript]": {
     "editor.defaultFormatter": "biomejs.biome"
-  },
-  "solidity.defaultCompiler": "localNodeModule"
+  }
 }
