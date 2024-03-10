@@ -1,0 +1,10 @@
+{
+	"name": "contracts",
+	"module": "index.ts",
+	"type": "module",
+	"scripts": {
+		"postinstall": "forge install",
+		"build": "forge build",
+		"test": "forge test"
+	}
+}

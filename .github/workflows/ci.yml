@@ -1,0 +1,32 @@
+name: CI
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+permissions:
+  actions: read
+  contents: read
+
+env:
+  FOUNDRY_PROFILE: ci
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Use bun
+        uses: oven-sh/setup-bun@v1
+      - name: Install Foundry
+        uses: foundry-rs/foundry-toolchain@v1
+        with:
+          version: nightly
+      - uses: nrwl/nx-set-shas@v3
+      - run: bun install --frozen-lockfile
+      - run: npm ci
+      - run: git branch --track main origin/main
+      - run: pnpm nx affected -t build test --parallel=2
