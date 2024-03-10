@@ -1,15 +1,23 @@
 {
-	"editor.defaultFormatter": "biomejs.biome",
-	"[json]": {
-		"editor.defaultFormatter": "biomejs.biome"
-	},
-	"editor.formatOnSave": true,
-	"[solidity]": {
-		"editor.defaultFormatter": "JuanBlanco.solidity"
-	},
-	"solidity.formatter": "forge",
-	"[jsonc]": {
-		"editor.defaultFormatter": "biomejs.biome"
-	},
-	"solidity.compileUsingRemoteVersion": "v0.8.24+commit.e11b9ed9"
+  "editor.defaultFormatter": "biomejs.biome",
+  "[json]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "editor.formatOnSave": true,
+  "[solidity]": {
+    "editor.defaultFormatter": "JuanBlanco.solidity"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[toml]": {
+    "editor.defaultFormatter": "tamasfe.even-better-toml"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "solidity.defaultCompiler": "localNodeModule"
 }
