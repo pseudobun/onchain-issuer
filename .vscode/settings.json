@@ -10,5 +10,6 @@
 	"solidity.formatter": "forge",
 	"[jsonc]": {
 		"editor.defaultFormatter": "biomejs.biome"
-	}
+	},
+	"solidity.compileUsingRemoteVersion": "v0.8.24+commit.e11b9ed9"
 }
