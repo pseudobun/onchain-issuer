@@ -1,9 +1,13 @@
 import type { HardhatUserConfig } from 'hardhat/config';
 import '@nomicfoundation/hardhat-toolbox';
+import '@nomicfoundation/hardhat-foundry';
 /**
  * @type import('hardhat/config').HardhatUserConfig
  */
 const config: HardhatUserConfig = {
+  paths: {
+    sources: './src',
+  },
   solidity: {
     compilers: [
       {
@@ -16,7 +20,7 @@ const config: HardhatUserConfig = {
         version: '0.8.2',
       },
       {
-        version: '0.6.11',
+        version: '0.8.21',
       },
     ],
   },
