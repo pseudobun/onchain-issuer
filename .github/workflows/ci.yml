@@ -1,9 +1,12 @@
 name: CI
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
+      - develop
   pull_request:
+    types: [opened, synchronize, reopened]
 
 permissions:
   actions: read
@@ -13,6 +16,7 @@ env:
   FOUNDRY_PROFILE: ci
 jobs:
   main:
+    name: Main CI
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
