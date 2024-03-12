@@ -6,7 +6,9 @@
     "build:forge": "forge build",
     "test:hardhat": "hardhat test",
     "test:forge": "forge test",
-    "test": "pnpm test:hardhat && pnpm test:forge"
+    "test": "pnpm test:hardhat && pnpm test:forge",
+    "lint": "forge fmt --check",
+    "lint:fix": "forge fmt"
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-foundry": "^1.1.1",

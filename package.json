@@ -1,14 +1,17 @@
 {
-	"name": "onchain-issuer",
-	"private": true,
-	"workspaces": ["packages/*"],
-	"scripts": {
-		"build": "bunx nx run-many --target=build",
-		"test": "bunx nx run-many --target=test"
-	},
-	"devDependencies": {
-		"@biomejs/biome": "1.6.0",
-		"@nx/js": "18.0.8",
-		"nx": "18.0.8"
-	}
+  "name": "onchain-issuer",
+  "private": true,
+  "workspaces": ["packages/*"],
+  "scripts": {
+    "build": "pnpm nx run-many --target=build",
+    "test": "pnpm nx run-many --target=test",
+    "lint": "pnpm nx run-many --target=lint",
+    "lint:fix": "pnpm nx run-many --target=lint:fix"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.6.0",
+    "@nx/js": "18.0.8",
+    "nx": "18.0.8"
+  },
+  "packageManager": "pnpm@8.12.1"
 }
