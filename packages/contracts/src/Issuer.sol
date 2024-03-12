@@ -15,8 +15,6 @@ import {PoseidonUnit4L} from "@iden3/contracts/lib/Poseidon.sol";
  */
 contract BalanceCredentialIssuer is NonMerklizedIssuerBase, OwnableUpgradeable {
     using IdentityLib for IdentityLib.Data;
-
-    uint256 public constant MAX_CLAIMS = 1000;
     /// @custom:storage-location erc7201:balance.credential.issuer.storage
 
     struct Storage {
