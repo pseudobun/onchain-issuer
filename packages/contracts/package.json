@@ -8,7 +8,8 @@
     "test:forge": "forge test",
     "test": "pnpm test:hardhat && pnpm test:forge",
     "lint": "forge fmt --check",
-    "lint:fix": "forge fmt"
+    "lint:fix": "forge fmt",
+    "postinstall": "forge install"
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-foundry": "^1.1.1",
