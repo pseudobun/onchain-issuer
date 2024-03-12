@@ -7,8 +7,8 @@
     "test:hardhat": "hardhat test",
     "test:forge": "forge test",
     "test": "pnpm test:hardhat && pnpm test:forge",
-    "lint": "forge fmt --check",
-    "lint:fix": "forge fmt",
+    "lint": "forge fmt --check && biome check .",
+    "lint:fix": "forge fmt && biome check --apply .",
     "postinstall": "forge install"
   },
   "devDependencies": {
