@@ -18,3 +18,4 @@ sort_imports = true
 multiline_func_header = "params_first"
 contract_new_lines = true
 override_spacing = true
+ignore = ["node_modules"]
