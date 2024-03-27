@@ -47,7 +47,7 @@ contract BalanceCredentialIssuer is NonMerklizedIssuerBase, OwnableUpgradeable {
 
     // jsonldSchemaHash hash of jsonld schema.
     // More about schema: https://devs.polygonid.com/docs/issuer-node/issuer-node-api/claim/apis/#get-claims
-    uint256 private constant jsonldSchemaHash = 148_834_697_620_350_657_501_993_499_321_116_864_501;
+    uint256 private constant jsonldSchemaHash = 148_834_697_620_350_657_501_993_499_321_116_864_501; // hex form: 6FF88524B07A4EAAB4D733C595172FF5
     string private constant jsonSchema =
         "https://gist.githubusercontent.com/ilya-korotya/e10cd79a8cc26ab6e40400a11838617e/raw/575edc33d485e2a4c806baad97e21117f3c90a9f/non-merklized-non-zero-balance.json";
     string private constant jsonldSchema =

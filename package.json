@@ -1,7 +1,9 @@
 {
   "name": "onchain-issuer",
   "private": true,
-  "workspaces": ["packages/*"],
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
     "build": "pnpm nx run-many --target=build",
     "test": "pnpm nx run-many --target=test",
@@ -13,5 +15,8 @@
     "@nx/js": "18.0.8",
     "nx": "18.0.8"
   },
-  "packageManager": "pnpm@8.12.1"
+  "packageManager": "pnpm@8.12.1",
+  "dependencies": {
+    "@wagmi/cli": "^2.1.4"
+  }
 }
