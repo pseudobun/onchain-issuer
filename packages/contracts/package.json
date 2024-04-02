@@ -9,6 +9,7 @@
     "test": "pnpm test:hardhat && pnpm test:forge",
     "lint": "forge fmt --check && biome check .",
     "lint:fix": "forge fmt && biome check --apply .",
+    "deploy:local": "forge script script/IssuerDeployer.s.sol:IssuerDeployer --fork-url http://localhost:8545 --broadcast",
     "postinstall": "forge install"
   },
   "devDependencies": {
