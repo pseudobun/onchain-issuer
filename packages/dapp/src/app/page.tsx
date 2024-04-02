@@ -1,59 +1,56 @@
 'use client';
+import React, {
+  useEffect,
+  useState,
+  useContext,
+  type ChangeEvent,
+} from 'react';
+import { getIssuersList } from '@/services/issuer';
+import SelectedIssuerContext from '@/contexts/SelectedIssuerContext';
+import { useRouter } from 'next/navigation';
+import CustomDropdown from './components/Dropdown';
+import { Button } from '@nextui-org/react';
 
-import { useAccount, useConnect, useDisconnect, useEnsName } from 'wagmi';
-import { mainnet } from 'wagmi/chains';
+const App = () => {
+  const router = useRouter();
 
-function App() {
-  const account = useAccount();
-  const { connectors, connect, status, error } = useConnect();
-  const { disconnect } = useDisconnect();
-  const { data: ensName } = useEnsName({
-    address: account.address,
-    chainId: mainnet.id,
-  });
+  const onClick = () => {
+    router.push('/signin');
+  };
+
+  const [issuerList, setIssuerList] = useState<any[]>([]);
+  const [error, setError] = useState<string | null>(null);
+  const { setSelectedIssuerContext } = useContext(SelectedIssuerContext);
+
+  const handleSelectIssuer = (e: ChangeEvent<HTMLSelectElement>) => {
+    setSelectedIssuerContext(e.target.value);
+  };
+
+  useEffect(() => {
+    const fetchIssuers = async () => {
+      try {
+        const issuers = await getIssuersList();
+        // convert issuers into array of objects from array of strings and asign random id to each element
+        const issuersWithId = issuers.map((issuer) => ({
+          id: window.crypto.randomUUID(),
+          name: issuer,
+        }));
+
+        setIssuerList(issuersWithId);
+      } catch (error) {
+        setError(`Failed to fetch issuers ${error}`);
+      }
+    };
+
+    fetchIssuers();
+  }, []);
 
   return (
-    <>
-      <div>
-        <h2>Account</h2>
-
-        <div>
-          status: {account.status}
-          <br />
-          addresses: {JSON.stringify(account.addresses)}
-          <br />
-          {ensName && (
-            <>
-              ENS: {ensName}
-              <br />
-            </>
-          )}
-          chainId: {account.chainId}
-        </div>
-
-        {account.status === 'connected' && (
-          <button type="button" onClick={() => disconnect()}>
-            Disconnect
-          </button>
-        )}
-      </div>
-
-      <div>
-        <h2>Connect</h2>
-        {connectors.map((connector) => (
-          <button
-            key={connector.uid}
-            onClick={() => connect({ connector })}
-            type="button"
-          >
-            {connector.name}
-          </button>
-        ))}
-        <div>{status}</div>
-        <div>{error?.message}</div>
-      </div>
-    </>
+    <div className="flex h-screen gap-y-2 flex-col items-center justify-center">
+      <CustomDropdown issuers={issuerList} onChange={handleSelectIssuer} />
+      <Button onClick={onClick}>Sign In</Button>
+    </div>
   );
-}
+};
 
 export default App;
