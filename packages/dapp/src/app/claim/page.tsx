@@ -49,10 +49,6 @@ const App = () => {
       const issuerDid = DID.parse(selectedIssuerContext);
       const issuerId = DID.idFromDID(issuerDid);
       const contractAddress = Hex.encodeString(Id.ethAddressFromId(issuerId));
-      console.log(
-        '🚀 ~ issueOnchainCredential ~ contractAddress: ',
-        contractAddress
-      );
 
       // extract user id from user did
       const userDid = searchParams.get('userId');

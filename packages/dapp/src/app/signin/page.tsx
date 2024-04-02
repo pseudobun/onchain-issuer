@@ -46,7 +46,6 @@ const MyPage = () => {
     const checkStatus = async () => {
       try {
         const response = await checkAuthSessionStatus(sessionId);
-        console.log('🚀 ~ checkStatus ~ response: ', response);
         if (response && response.id !== null && response.id !== undefined) {
           clearInterval(interval);
           router.push(`/claim?userId=${response.id}`);

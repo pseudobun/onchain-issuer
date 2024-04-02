@@ -17,7 +17,6 @@ const Code: FunctionComponent<QRCodeData> = (props) => {
 };
 
 const dispachEvent = async (value: string) => {
-  console.log('🚀 ~ dispachEvent ~ value: ', value);
   const msg = btoa(value);
   const hrefValue = `iden3comm://?i_m=${msg}`;
 

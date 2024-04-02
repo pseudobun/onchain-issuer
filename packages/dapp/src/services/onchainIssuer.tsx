@@ -70,7 +70,6 @@ export const getCredential = async (
     data: data,
   };
   const resultHex = await web3.eth.call(transactionObject);
-  console.log('Raw hex result', resultHex);
   return resultHex;
 };
 
