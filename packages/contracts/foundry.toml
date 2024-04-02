@@ -19,3 +19,9 @@ multiline_func_header = "params_first"
 contract_new_lines = true
 override_spacing = true
 ignore = ["node_modules"]
+
+[rpc_endpoints]
+sepolia = "${SEPOLIA_RPC_URL}"
+
+[etherscan]
+sepolia = { key = "${ETHERSCAN_API_KEY}" }

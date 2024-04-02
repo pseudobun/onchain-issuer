@@ -3,3 +3,5 @@ cache_forge
 artifacts
 typechain-types
 out
+broadcast
+.env
